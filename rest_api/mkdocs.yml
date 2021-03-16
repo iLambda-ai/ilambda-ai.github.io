@@ -1,0 +1,9 @@
+site_name: iLambda Test
+nav: 
+  - Home: index.md
+  - Test: about.md
+theme:
+  name: "material"
+  custom_dir: overrides
+  features:
+    - navigation.tabs
