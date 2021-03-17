@@ -1,6 +1,7 @@
-site_name: iLambda Test
+site_name: iLambda API Documentation
 nav: 
   - Home: index.md
+  - Sample: sample.md
   - Test: about.md
 theme:
   name: "material"
