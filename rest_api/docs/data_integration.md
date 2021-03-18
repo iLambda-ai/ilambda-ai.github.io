@@ -12,8 +12,11 @@ EDA uses token for API authentication.
 * Contact iLambda for registration.
 * Use REST API to obtain token.
 
-### **HTTP Request**
-`POST https://openapi.ilambda.com/openapi/auth/token`
+### **URL**
+`https://openapi.ilambda.com/openapi/auth/token`
+
+### **Method**
+`POST`
 
 ### **JSON Parameters**
 
@@ -22,6 +25,14 @@ Parameter    |   Required?   | Description
 username | Yes  | user registration name
 password | Yes  | user registration password
 duration | Yes  | token validity period in seconds
+
+### **Sample Request**
+
+```shell
+curl -X POST -H  "content-type:application/json" \
+    -d '{"username":"test_user","password":"admin"}' \
+    "https://openapi.ilambda.com/openapi/auth/token"
+```
 
 ### **Sample Output**
 
