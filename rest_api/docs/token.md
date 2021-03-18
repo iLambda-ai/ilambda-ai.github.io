@@ -1,12 +1,11 @@
 # Token API
 
-## **Introduction**
-
 ----
+
 Most API in EDA requires access token for authentication purpose. User may fetch a token from EDA token API by specifying user name and password.
 If you do not have your own user id and password assigned yet, please follow this link to create your account in ILAMBDA Cloud.
 
-[Click Here To Create New Account] ()
+[Click Here To Create New Account]()
 
 ----
 ## **API Details**
