@@ -27,9 +27,9 @@ duration | Yes  | token validity period in seconds
 
 ```json
 {
-  result: 1,
-  message: "Get token successfully.",
-  data: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaW5mby"
+  "result": 1,
+  "message": "Get token successfully.",
+  "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaW5mby"
 }
 ```
 
