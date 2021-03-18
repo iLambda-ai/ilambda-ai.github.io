@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+# Welcome to EDA's API documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+EDA system requires well formatted ***product meta*** and ***user event*** data for recommendation service. User can use PULL/PUSH to load the data into EDA system.
 
-## Commands
+## Product Meta
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Information describe the product are called ***product meta*** includes the meta, attributes and category info.
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## User Event
+User real time data includes ***event*** and ***impression***. Event and impression data share the same schema with different intention.
