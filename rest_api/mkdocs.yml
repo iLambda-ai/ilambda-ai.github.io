@@ -1,8 +1,13 @@
 site_name: iLambda API Documentation
 nav: 
   - Home: index.md
-  - Data API: data_integration.md
-  - Recommendation API: eda_service.md
+  - Recommendation:
+    - 'Data Integration': rec_data_integration.md
+    - 'Service API': rec_api.md
+  - Product Discovery:
+    - 'Data Integration': ps_data_integration.md
+    - 'Service API': ps_api.md
+
 theme:
   name: "material"
   custom_dir: overrides
