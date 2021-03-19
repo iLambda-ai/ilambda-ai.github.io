@@ -19,7 +19,7 @@ Must set HTTP header:
 `content: application/json`
 
 ### **Method**
-POST - message body must be valid JSON format.
+`POST` - message body must be valid JSON format.
 
 ### **JSON Parameters**
 
@@ -32,13 +32,16 @@ duration | Yes  | integer, token validity period in seconds
 "duration" should be set wisely. In a environment that token would be exposed to external world, use a short duration like hundreds of seconds so that risk will be minimized even if token is leaked.
 On the other hand, you may use much higher duration if it is in a secured environment.
 
-Here is a sample POST body:
-```json
-{
-  "username": "sample",
-  "password": "justatest",
-  "duration": 3600
-}
+### **Sample Request**
+
+```shell
+curl -X POST -H  "content-type:application/json" \
+    -d '{
+        "username":"test_user",
+        "password":"admin",
+        "duration": 3600
+        }' \
+    "https://openapi.ilambda.com/openapi/auth/token"
 ```
 
 ### **Sample Output**
