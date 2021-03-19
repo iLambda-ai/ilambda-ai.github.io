@@ -20,10 +20,21 @@ Before diving into the API details, you need to figure out what is your data col
 ### Item metadata API
 
 
-API          |   Purpose
------------- | ------------- 
+API          |   Description
+------------ | -------------
 /upload/ItemTable | upload item meta
 /upload/ItemProperty | upload item attributes
 /upload/CategoryTable | upload category information
+
+### HTTP Status Code
+
+
+Code         |   Description
+------------ | -------------
+200 | OK
+400 | Parameter Error
+401 | Invalid Token
+402 | Expired Token
+404 | ID not exist/no result
 
 ----

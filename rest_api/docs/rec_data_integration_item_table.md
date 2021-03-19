@@ -10,21 +10,23 @@
 
 Field  |   Type   | Required | Description
 -------| ------------- | ------------ | ----------
-item_id	| VARCHAR	| yes | 商品唯一ID, unique per site.主键
-site_id	| VARCHAR	| yes | 商品站点ID, 主键。默认值为0，如果只有一个站点无需传入。
-cat_id	| VARCHAR	| yes | 后台叶子类目id
-item_name	| VARCHAR	| yes | 商品名称 
-item_desc	| VARCHAR	| yes | 商品描述 
-is_onsale	| INT	| | 0: 商品下架或者售罄, > 0 商品的在售（库存件数）
-onsale_time	| BIGINT | |	Unix timestamp 商品的开始售卖时间点
-original_price |	FLOAT |	| 原价
-price	| FLOAT	| yes | 售价
-currency	| VARCHAR	| | 货币类型，如USD, CNY, 如果只有一个币种可不填
-add_time	| BIGINT	| | 商品上传的时间戳，unix timestamp，如1500000000
-last_update	| BIGINT	| | 商品最后一次状态变化的时间戳，.eg. 1500000000
-img_url	| VARCHAR	| yes | Image URL，可以包含多个链接，用逗号分隔，第一个是主图链接
-thumb_url	| VARCHAR	 | | 商品缩略图 URL，可以包含多个链接，用逗号分隔，第一个是主图链接
-item_url	| VARCHAR	 | | 商品原始链接，链接到商品详情页面。
+item\_id	| VARCHAR	| yes | Unique id to indicate the item, unique per site.
+site\_id	| VARCHAR	| yes | Support mutiple sites. If only one site, set to 1.
+spu\_id	| VARCHAR	|  | Different item from different site can map to one SPU ID. Could be null if not available.
+cat\_id	| VARCHAR	| yes | Leaf node category id.
+item\_name	| VARCHAR	| yes | Name
+item\_desc	| VARCHAR	| yes | Item description, could be null.
+is\_onsale	| INT	| | 0: Discontinued , > 0 inventory number.
+onsale\_time	| BIGINT | |	When product is available online. (Unix timestamp)
+original\_price |	FLOAT |	| Item original price.
+price	| FLOAT	| yes | Item price.
+currency	| VARCHAR	| | Currency. e.g. USD, CNY.
+add\_time	| BIGINT	| | When product add into stock. (unix timestamp)
+last\_update	| BIGINT	| | Most recent access timestamp. eg. 1500000000
+season	| INT	| | Product season. 0. default, 1. spring, 2. summer, 3, fall, 4, winter, 5, spring and summer, 6. summer and fall, 7. spring and winter, 8. summer and fall, 9. summer and winter, 10. fall and winter.
+img\_url	| VARCHAR	| yes | Image URL，use ";" to separate multiple image pathes. The first one is the main image.
+thumb\_url	| VARCHAR	 | | Thumbnail image URL，use ";" to separate multiple image pathes. The first one is the main image. 
+item\_url	| VARCHAR	 | | Product URL link.
 
 #### Sample input
 ```json
