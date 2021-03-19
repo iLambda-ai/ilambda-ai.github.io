@@ -1,9 +1,13 @@
 site_name: iLambda API Documentation
 nav: 
   - Home: index.md
+  - Token: token.md
   - Recommendation:
-    - 'Data Integration': rec_data_integration.md
-    - 'Service API': rec_api.md
+    - Data Integration:
+      - 'Introduction': rec_data_integration_intro.md
+      - 'ItemTable': rec_data_integration_item_table.md
+    - Service API:
+      - 'Landing': rec_api_landing.md
   - Product Discovery:
     - 'Data Integration': ps_data_integration.md
     - 'Service API': ps_api.md
