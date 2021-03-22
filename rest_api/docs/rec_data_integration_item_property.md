@@ -1,8 +1,8 @@
 
-# **Landing Page API**
+# **Item Property API**
 
 #### URL
-`/recommend/landing`
+`/upload/ItemTable`
 
 #### Method
 `POST`
@@ -75,4 +75,3 @@ item\_url	| VARCHAR	 | | Product URL link.
 ```
 
 ----
-

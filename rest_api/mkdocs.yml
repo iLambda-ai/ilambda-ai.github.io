@@ -3,13 +3,19 @@ nav:
   - Home: index.md
   - Token: token.md
   - Recommendation:
-    - Overview: rec_data_integration_item_table.md
+    - Overview: rec_data_integration_overview.md
     - Data Integration:
-      - 'Overview': rec_data_integration_intro.md
       - 'ItemTable': rec_data_integration_item_table.md
+      - 'ItemProperty': rec_data_integration_item_property.md
+      - 'CategoryTable': rec_data_integration_category_table.md
+      - 'NavCategoryTable': rec_data_integration_nav_category_table.md
+      - 'Event': rec_data_integration_event_table.md
+      - 'Impression': rec_data_integration_impression_table.md
     - Service API:
       - 'Overview': rec_api_overview.md
+      - 'Detail': rec_api_detail.md
       - 'Landing': rec_api_landing.md
+      - 'Activity': rec_api_activity.md
   - Product Discovery:
     - 'Data Integration': ps_data_integration.md
     - 'Service API': ps_api.md
