@@ -1,76 +1,90 @@
 
-# **Item Table API**
+# **Impression API**
 
 #### URL
-`/upload/ItemTable`
+`/upload/impression`
+
+HTTP header: `content: application/json`
 
 #### Method
 `POST`
+
 #### **JSON Parameters**
 
 Field  |   Type   | Required | Description
 -------| ------------- | ------------ | ----------
-item\_id	| VARCHAR	| yes | Unique id to indicate the item, unique per site.
-site\_id	| VARCHAR	| yes | Support mutiple sites. If only one site, set to 1.
-spu\_id	| VARCHAR	|  | Different item from different site can map to one SPU ID. Could be null if not available.
-cat\_id	| VARCHAR	| yes | Leaf node category id.
-item\_name	| VARCHAR	| yes | Name
-item\_desc	| VARCHAR	| yes | Item description, could be null.
-is\_onsale	| INT	| | 0: Discontinued , > 0 inventory number.
-onsale\_time	| BIGINT | |	When product is available online. (Unix timestamp)
-original\_price |	FLOAT |	| Item original price.
-price	| FLOAT	| yes | Item price.
-currency	| VARCHAR	| | Currency. e.g. USD, CNY.
-add\_time	| BIGINT	| | When product add into stock. (unix timestamp)
-last\_update	| BIGINT	| | Most recent access timestamp. eg. 1500000000
-season	| INT	| | Product season. 0. default, 1. spring, 2. summer, 3, fall, 4, winter, 5, spring and summer, 6. summer and fall, 7. spring and winter, 8. summer and fall, 9. summer and winter, 10. fall and winter.
-img\_url	| VARCHAR	| yes | Image URL，use ";" to separate multiple image pathes. The first one is the main image.
-thumb\_url	| VARCHAR	 | | Thumbnail image URL，use ";" to separate multiple image pathes. The first one is the main image. 
-item\_url	| VARCHAR	 | | Product URL link.
+event\_id	| String	|  | Unique id to indicate one event. System assigns one unique id if empty.
+site\_id	| String	|  | Support mutiple sites. If only one site, set to 1.
+cookie\_id	| String	|  | Cookie Id of current event.
+user\_id	| String	|  | User Id of current event. Leave it null if not available.
+event\_key	| String	| yes | Event types: <br> - click <br> - addCart <br> - addWish <br> - order <br> - orderPay <br> - imp <br> - pageView
+target\_id	| String	| yes | Item Id or order Id in terms of the context.
+server\_time	| Integer	| | Event time receive at the server. (unix timestamp). All events use same timezone.
+section	| String | |	Refer to the source of the events. e.g. landing, detail, list etc.
+context |	String |	| Context information for section.
+algorithm	| String	| yes | EDA algorithm source tracecode in order to assist analysis.
+page\_id	| String	| | Extra information about current page. Optional.
+prev\_page\_id	| String	| | Extra information about previous page. Optional.
+price	| Number	| | Event price, valid for addCart, order and imp events. Optional
+currency	| String	| | Currency. e.g. USD, CNY.
+item\_count	| Integer	|  | The total item number of addCart/order.
+channel	| String	 | | Event source channel. e.g mobile, pc, h5 and apple etc.
 
 #### Sample input
 ```json
 {
-  "items": [
-     {
-      "item_id": "123123111",
-      "site_id": "big",
-      "cat_id": "1135",
-      "item_name": "Men Sports Sweater",
-      "item_desc": "description",
-      "is_onsale": 1,
-      "original_price": 35.8,
-      "price": 25.8,
-      "currency": "USD",
-      "add_time": 1583853406,
-      "season": "1",
-      "img_url": "http://testtest.com/ttt"
-    },
-    {
-      "item_id": "123123222",
-      "site_id": "small",
-      "cat_id": "1135",
-      "item_name": "Women's Sports Sweater",
-      "item_desc": "description",
-      "is_onsale": 1,
-      "original_price": 55.8,
-      "price": 35.8,
-      "currency": "USD",
-      "add_time": 1583853806,
-      "season": "1",
-      "img_url": "http://testtest.com/ttt"
-    }
-  ]
+    "events": [
+        {
+           "cookie_id": "3872edfe33432",
+            "user_id": "edacloud",
+            "event_key": “imp",
+            "target_id": “323333333",
+            "section": "detail",
+            "context": “132342342@12”
+        },
+        {
+           “cookie_id": "1942234444",
+            "event_key": “imp",
+            "server_time": 1583853406,
+            "target_id": "1111"
+        }
+    ]
 }
 ```
 
 #### **Sample Output**
 
+##### **Success**
 ```json
 {
-  "result": 1,
-  "message": "Get token successfully.",
-  "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaW5mby"
+  "status": "OK",
+  "result": 1
+}
+```
+
+##### **Error** - `Invalid Token`
+```json
+{
+  "errors": {
+    "message": "invalid signature",
+    "error": {
+      "status": 401,
+      "name": "UnauthorizedError",
+      "message": "invalid signature",
+      "code": "invalid_token"
+    }
+  }
+}
+```
+
+##### **Error** - `Data Format Error`
+```json
+{
+  "errors": {
+    "message": "json not comply with schema: 0:
+                instance.items[0] requires property \"item_id\"\n",
+    "error": { }
+  }
 }
 ```
 
