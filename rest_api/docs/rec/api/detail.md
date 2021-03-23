@@ -5,7 +5,7 @@
 `/recommend/detail`
 
 #### Method
-`POST`
+`GET`
 
 #### **Arguments**
 
