@@ -19,14 +19,14 @@ spu\_id	| String	|  | Different item from different site can map to one SPU ID. 
 cat\_id	| String	| yes | Leaf node category id.
 item\_name	| String	| yes | Name
 item\_desc	| String	| yes | Item description, could be null.
-is\_onsale	| Integer	| | 0: Discontinued , > 0 inventory number.
+is\_onsale	| Integer	| | - 0: Discontinued <br> > - 0: inventory number
 onsale\_time	| Integer | |	When product is available online. (Unix timestamp)
 original\_price |	Number |	| Item original price.
 price	| Number	| yes | Item price.
 currency	| String	| | Currency. e.g. USD, CNY.
 add\_time	| Integer	| | When product add into stock. (unix timestamp)
 last\_update	| Integer	| | Most recent access timestamp. eg. 1500000000
-season	| Integer	| | Product season. 0. default, 1. spring, 2. summer, 3, fall, 4, winter, 5, spring and summer, 6. summer and fall, 7. spring and winter, 8. summer and fall, 9. summer and winter, 10. fall and winter.
+season	| Integer	| | Product season. <br> - 0: default <br> - 1: spring <br> - 2: summer <br> - 3: fall <br> - 4: winter <br> - 5:  spring and summer <br> - 6: summer and fall <br> - 7: spring and winter <br> - 8: summer and fall <br> - 9: summer and winter <br> - 10: fall and winter
 img\_url	| String	| yes | Image URL，use ";" to separate multiple image pathes. The first one is the main image.
 thumb\_url	| String	 | | Thumbnail image URL，use ";" to separate multiple image pathes. The first one is the main image. 
 item\_url	| String	 | | Product URL link.
