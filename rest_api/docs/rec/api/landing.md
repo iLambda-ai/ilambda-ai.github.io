@@ -13,7 +13,6 @@ Parameter  |   Description
 -------| -------------
 token	| Authentication token
 userId	| CookieId
-itemId	| Product Id
 offset	| The start position of return results, 0 based
 limit	| Total number of return results
 
