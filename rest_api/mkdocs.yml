@@ -9,6 +9,7 @@ nav:
       - 'ItemProperty': rec/data_integration/item_property.md
       - 'CategoryTable': rec/data_integration/category_table.md
       - 'NavCategoryTable': rec/data_integration/nav_category_table.md
+      - 'NavCategoryMapping': rec/data_integration/nav_category_mapping.md
       - 'Event': rec/data_integration/event_table.md
       - 'Impression': rec/data_integration/impression_table.md
     - Service API:
