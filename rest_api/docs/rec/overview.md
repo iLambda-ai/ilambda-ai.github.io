@@ -1,5 +1,7 @@
 
-# Recommendation Data Upload
+# **Recommendation API**
+
+## **Data Integration API**
 
 EDA Recommendation requires two kinds of data to provide high quality recommendation services:
 
@@ -26,6 +28,22 @@ API          |   Description
 /upload/ItemProperty | upload item attributes
 /upload/CategoryTable | upload category information
 
+
+----
+## **Service API**
+
+----
+
+### Recommendation Service API
+
+
+API          |   Description
+------------ | -------------
+/recommend/Detail | detail page recommendation
+/recommend/Landing | landing page recommendation
+/recommend/Activity | activity page recommendation
+
+----
 ### HTTP Status Code
 
 

@@ -4,8 +4,11 @@
 #### URL
 `/upload/ItemTable`
 
+HTTP header: `content: application/json`
+
 #### Method
 `POST`
+
 #### **JSON Parameters**
 
 Field  |   Type   | Required | Description
@@ -66,11 +69,37 @@ item\_url	| String	 | | Product URL link.
 
 #### **Sample Output**
 
+##### **Success**
 ```json
 {
-  "result": 1,
-  "message": "Get token successfully.",
-  "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaW5mby"
+  "status": "OK",
+  "result": 1
+}
+```
+
+##### **Error** - `Invalid Token`
+```json
+{
+  "errors": {
+    "message": "invalid signature",
+    "error": {
+      "status": 401,
+      "name": "UnauthorizedError",
+      "message": "invalid signature",
+      "code": "invalid_token"
+    }
+  }
+}
+```
+
+##### **Error** - `Data Format Error`
+```json
+{
+  "errors": {
+    "message": "json not comply with schema: 0:
+                instance.items[0] requires property \"item_id\"\n",
+    "error": { }
+  }
 }
 ```
 
