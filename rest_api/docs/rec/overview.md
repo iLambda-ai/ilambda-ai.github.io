@@ -1,5 +1,7 @@
 
-# Recommendation Data Upload
+# **Recommendation API**
+
+## **Data Integration API**
 
 EDA Recommendation requires two kinds of data to provide high quality recommendation services:
 
@@ -22,10 +24,26 @@ Before diving into the API details, you need to figure out what is your data col
 
 API          |   Description
 ------------ | -------------
-/upload/ItemTable | upload item meta
-/upload/ItemProperty | upload item attributes
-/upload/CategoryTable | upload category information
+[/upload/ItemTable](data_integration/item_table.md) | upload item meta
+[/upload/ItemProperty](data_integration/item_property.md) | upload item attributes
+[/upload/CategoryTable](data_integration/category_table.md) | upload category information
 
+
+----
+## **Service API**
+
+----
+
+### Recommendation Service API
+
+
+API          |   Description
+------------ | -------------
+[/recommend/Detail](api/detail.md) | detail page recommendation
+[/recommend/Landing](api/landing.md) | landing page recommendation
+[/recommend/Activity](api/activity.md) | activity page recommendation
+
+----
 ### HTTP Status Code
 
 

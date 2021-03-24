@@ -3,22 +3,22 @@ nav:
   - Home: index.md
   - Token: token.md
   - Recommendation:
-    - Overview: rec_data_integration_overview.md
+    - Overview: rec/overview.md
     - Data Integration:
-      - 'ItemTable': rec_data_integration_item_table.md
-      - 'ItemProperty': rec_data_integration_item_property.md
-      - 'CategoryTable': rec_data_integration_category_table.md
-      - 'NavCategoryTable': rec_data_integration_nav_category_table.md
-      - 'Event': rec_data_integration_event_table.md
-      - 'Impression': rec_data_integration_impression_table.md
+      - 'ItemTable': rec/data_integration/item_table.md
+      - 'ItemProperty': rec/data_integration/item_property.md
+      - 'CategoryTable': rec/data_integration/category_table.md
+      - 'NavCategoryTable': rec/data_integration/nav_category_table.md
+      - 'NavCategoryMapping': rec/data_integration/nav_category_mapping.md
+      - 'Event': rec/data_integration/event_table.md
+      - 'Impression': rec/data_integration/impression_table.md
     - Service API:
-      - 'Overview': rec_api_overview.md
-      - 'Detail': rec_api_detail.md
-      - 'Landing': rec_api_landing.md
-      - 'Activity': rec_api_activity.md
+      - 'Detail': rec/api/detail.md
+      - 'Landing': rec/api/landing.md
+      - 'Activity': rec/api/activity.md
   - Product Discovery:
-    - 'Data Integration': ps_data_integration.md
-    - 'Service API': ps_api.md
+    - 'Data Integration': product_discover/data_integration/ps_data_integration.md
+    - 'Service API': product_discover/api/ps_api.md
 
 theme:
   name: "material"
