@@ -27,7 +27,7 @@ limit	| Total number of return results
     "result": 0,
     "message": "kOk",
     "meta": {
-      "traceid": “ILAMBDARSDETAIL",
+      "traceid": "ILAMBDARSDETAIL",
       "totalItems": 3535
     },
     "data": {
